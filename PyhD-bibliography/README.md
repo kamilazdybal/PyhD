@@ -2,7 +2,7 @@
 
 ## Print the tags to all bibliography items in a `.bib` file
 
-► [`list-bib-items-tags.py`](https://gitlab.multiscale.utah.edu/kamila/phd-python/-/blob/master/manage-bibliography/list-bib-items-tags.py)
+► [`list-bib-items-tags.py`](list-bib-items-tags.py)
 
 Running this script on your `.bib` file will print something like this:
 
@@ -40,7 +40,7 @@ bib_filename = 'dissertation-bib.bib'
 
 ## Has an item from a `.bib` file been cited in a `.tex` source file?
 
-► [`is-it-cited.py`](https://gitlab.multiscale.utah.edu/kamila/phd-python/-/blob/master/manage-bibliography/is-it-cited.py)
+► [`is-it-cited.py`](is-it-cited.py)
 
 Running this script on your `.bib` and `.tex` files will print a list of tags to bibliography items that have or have not been cited in your `.tex` source file. This will look something like this:
 
@@ -83,7 +83,7 @@ bib_filename = 'dissertation-bib.bib'
 
 ## Find duplicate bibliography items tags in a `.bib` file
 
-► [`duplicate-tags.py`](https://gitlab.multiscale.utah.edu/kamila/phd-python/-/blob/master/manage-bibliography/duplicate-tags.py)
+► [`duplicate-tags.py`](duplicate-tags.py)
 
 Running this script on your `.bib` file will print something like this:
 
@@ -122,7 +122,7 @@ bib_filename = 'dissertation-bib.bib'
 
 ## Count the number of bibliography items in a `.bib` file
 
-► [`count-bibliography-items.py`](https://gitlab.multiscale.utah.edu/kamila/phd-python/-/blob/master/manage-bibliography/count-bibliography-items.py)
+► [`count-bibliography-items.py`](count-bibliography-items.py)
 
 Running this script on your `.bib` file will print something like this:
 
@@ -147,7 +147,7 @@ filename = 'dissertation-bib.bib'
 
 ## Rename bibliography files to lower-case
 
-► [`rename-bibliography-files.py`](https://gitlab.multiscale.utah.edu/kamila/phd-python/-/blob/master/manage-bibliography/rename-bibliography-files.py)
+► [`rename-bibliography-files.py`](rename-bibliography-files.py)
 
 Running this script will get you from this:
 
