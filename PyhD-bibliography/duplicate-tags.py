@@ -1,39 +1,44 @@
-# This script tells you which bib items tags have been defined multiple times in the .bib file
+# This script finds duplicate bibliography items tags in the .bib file
 
 # User input: ------------------------------------------------------
 
 directory = './'
-bib_filename = 'dissertation-bib.bib'
+filename = 'bibliography.bib'
 
 # ------------------------------------------------------------------
 
-bib_file = open(directory + bib_filename, 'r+')
-bib_file_content = bib_file.read()
-bib_file_list = bib_file_content.split('\n')
-bib_tags_list = []
+import re
 
-for item in bib_file_list:
-    if len(item) != 0:
-        if item[0] == '@':
-            split_item = item.split('{')
-            bib_tag = split_item[1][0:-1]
-            bib_tags_list.append(bib_tag)
+file = open(directory + filename, 'r')
+file_content = file.read()
+file_list = file_content.split('\n')
 
-if len(bib_tags_list) != len(set(bib_tags_list)):
+tags_list = []
 
-    duplicates = set([i for i in bib_tags_list if bib_tags_list.count(i) > 1])
+for item in file_list:
+    
+    match = re.search(r'@.*\{(.*),', item)
+    
+    if match is not None:
+        
+        tag = match.group(1)
+        tags_list.append(tag)
 
-    print('\n' + '-'*40)
-    for item in sorted(duplicates):
+file.close()
+
+if len(tags_list) != len(set(tags_list)):
+    
+    duplicates = set([item for item in tags_list if tags_list.count(item) > 1])
+ 
+    print('Duplicate tags found: ' + str(len(duplicates)))
+    
+    print('- '*20)
+    for item in duplicates:
         print(item)
-
-    print('\t' + str(len(duplicates)) + ' DUPLICATE TAGS FOUND.')
-    print('-'*40 + '\n')
-
+    print('- '*20)
+    
 else:
+    
+    print('No duplicates found.')
 
-    print('\n' + '-'*40)
-    print('NO DUPLICATE TAGS FOUND.')
-    print('-'*40 + '\n')
-
-bib_file.close()
+# ------------------------------------------------------------------

@@ -1,5 +1,37 @@
 # 🎓 Python scripts to manage your bibliography
 
+## Count the number of bibliography items in a `.bib` file
+
+► [`count-bibliography-items.py`](count-bibliography-items.py)
+
+Running this script on your `.bib` file will print something like this:
+
+```
+Total bibliography items: 8
+- - - - - - - - - - - - - - - - - - - - 
+           article: 4
+              book: 2
+           booklet: 0
+            inbook: 0
+      incollection: 0
+     inproceedings: 1
+            manual: 0
+     mastersthesis: 0
+              misc: 0
+         phdthesis: 1
+       proceedings: 0
+        techreport: 0
+       unpublished: 0
+- - - - - - - - - - - - - - - - - - - - 
+```
+
+The only thing you need to set in the script is the path to your `.bib` file:
+
+```python
+directory = './'
+filename = 'bibliography.bib'
+```
+
 ## Print the tags to all bibliography items in a `.bib` file
 
 ► [`list-bib-items-tags.py`](list-bib-items-tags.py)
@@ -7,35 +39,42 @@
 Running this script on your `.bib` file will print something like this:
 
 ```
-----------------------------------------
-bellemans2018feature
-cantera
-echekki2015principal
-gri30
-kaufman2009finding
-may2010data
-niu2013
-parente2011
-prufert2015constrained
-roweis2000nonlinear
-scikit-learn
-sutherland2009
-szekely2007measuring
-taylor1993multicomponent
-tenenbaum2000global
-thrun2021fundamental
-van2008visualizing
-yang2013empirical
-yetter1991comprehensive
-zhang2020large
-----------------------------------------
+breiman2001statistical
+lusch2018deep
+kobak2019art
+nilsson2007regression
+goodfellow2016deep
+zdybal2023dissertation
+breiman2001statistical
+goodfellow2016deep
 ```
 
 The only thing you need to set in the script is the path to your `.bib` file:
 
 ```python
 directory = './'
-bib_filename = 'dissertation-bib.bib'
+bib_filename = 'bibliography.bib'
+```
+
+## Find duplicate bibliography items tags in a `.bib` file
+
+► [`duplicate-tags.py`](duplicate-tags.py)
+
+Running this script on your `.bib` file will print something like this:
+
+```
+Duplicate tags found: 2
+- - - - - - - - - - - - - - - - - - - - 
+goodfellow2016deep
+breiman2001statistical
+- - - - - - - - - - - - - - - - - - - - 
+```
+
+The only thing you need to set in the script is the path to your `.bib` file:
+
+```python
+directory = './'
+bib_filename = 'bibliography.bib'
 ```
 
 ## Has an item from a `.bib` file been cited in a `.tex` source file?
@@ -78,71 +117,7 @@ The only thing you need to set in the script is the path to your `.bib` and `.te
 ```python
 directory = './'
 tex_filename = 'dissertation.tex'
-bib_filename = 'dissertation-bib.bib'
-```
-
-## Find duplicate bibliography items tags in a `.bib` file
-
-► [`duplicate-tags.py`](duplicate-tags.py)
-
-Running this script on your `.bib` file will print something like this:
-
-```
-----------------------------------------
-Spitfire
-buda2018
-coussement2012kernel
-echekki2015principal
-gill2004improving
-hawkes2007scalar
-isaac2015
-jolliffe2002
-macqueen1967some
-may2010data
-mirgolbabaei2014nonlinear
-owoyele2017toward
-parente2009identification
-parente2013principal
-pope2013small
-russell2002artificial
-scikit-learn
-sutherland2009combustion
-yang2013empirical
-zhang2020large
-	20 DUPLICATE TAGS FOUND.
-----------------------------------------
-```
-
-The only thing you need to set in the script is the path to your `.bib` file:
-
-```python
-directory = './'
-bib_filename = 'dissertation-bib.bib'
-```
-
-## Count the number of bibliography items in a `.bib` file
-
-► [`count-bibliography-items.py`](count-bibliography-items.py)
-
-Running this script on your `.bib` file will print something like this:
-
-```
-----------------------------------------
-Total bibliography items:	69
-	Journal articles:	55
-	Textbooks:		5
-	In proceedings:		3
-	In collection:		3
-	PhD theses:		1
-	Miscellaneous:		2
-----------------------------------------
-```
-
-The only thing you need to set in the script is the path to your `.bib` file:
-
-```python
-directory = './'
-filename = 'dissertation-bib.bib'
+bib_filename = 'bibliography.bib'
 ```
 
 ## Rename bibliography files to lower-case
